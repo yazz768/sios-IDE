@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html, body, #root { height: 100%; }
+  body { overflow: hidden; font-family: system-ui, -apple-system, sans-serif; }
+  input, textarea, [contenteditable] { user-select: text; }
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-600 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-slate-500; }
+
+.drag-overlay { pointer-events: none; }
+
+.field {
+  @apply w-full text-sm bg-slate-50 dark:bg-slate-700/60 text-slate-900 dark:text-white
+         rounded-xl px-3 py-2 outline-none border border-slate-200 dark:border-slate-700
+         placeholder-slate-400 focus:border-indigo-400 dark:focus:border-indigo-500 transition-colors;
+}
+
+.label {
+  @apply block text-xs font-medium text-slate-500 dark:text-slate-400 mb-1.5;
+}
